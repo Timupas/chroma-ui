@@ -1,0 +1,45 @@
+{
+  "name": "chroma-ui",
+  "version": "1.0.0",
+  "description": "A lightweight, type-safe utility for smart CSS color manipulation and accessibility.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timupas/chroma-ui.git"
+  },
+  "keywords": [
+    "color",
+    "css",
+    "ui",
+    "accessibility",
+    "typescript"
+  ],
+  "author": "Timupas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Timupas/chroma-ui/issues"
+  },
+  "homepage": "https://github.com/Timupas/chroma-ui#readme",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/node": "^25.5.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.4.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}
