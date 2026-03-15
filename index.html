@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chroma-UI Test</title>
+    <style>
+        body { font-family: sans-serif; display: flex; gap: 20px; padding: 50px; }
+        .box {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="original" class="box">Original</div>
+    <div id="modified" class="box">Modified (Dark)</div>
+
+    <script type="module">
+        // Import lib from dist
+        import { chroma } from './dist/index.mjs';
+
+        const baseColor = '#FFEBCD'; // Blue
+
+        // 1. First block
+        const originalEl = document.getElementById('original');
+        originalEl.style.backgroundColor = baseColor;
+        originalEl.style.color = chroma(baseColor).getContrastText();
+
+        // 2. Second block (dark 30%)
+        const modifiedEl = document.getElementById('modified');
+        const darkColor = chroma(baseColor).darken(30).toCss();
+        
+        modifiedEl.style.backgroundColor = darkColor;
+        modifiedEl.style.color = chroma(darkColor).getContrastText();
+    </script>
+</body>
+</html>

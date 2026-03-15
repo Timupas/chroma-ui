@@ -15,7 +15,7 @@ export class Chroma {
     this.b = parseInt(core.substring(4, 6), 16) || 0;
   }
 
-  // Метод затемнения
+  
   darken(amount: number): this {
     const factor = 1 - amount / 100;
     this.r = Math.round(Math.max(0, this.r * factor));
@@ -24,7 +24,7 @@ export class Chroma {
     return this;
   }
 
-  // Метод выбора цвета текста (черный или белый)
+  // Method black or white text color
   getContrastText(): string {
     const yiq = (this.r * 299 + this.g * 587 + this.b * 114) / 1000;
     return yiq >= 128 ? '#000000' : '#ffffff';

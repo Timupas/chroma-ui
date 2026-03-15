@@ -1,5 +1,5 @@
 {
-  "name": "chroma-ui",
+  "name": "@timurpas/chroma-ui",
   "version": "1.0.0",
   "description": "A lightweight, type-safe utility for smart CSS color manipulation and accessibility.",
   "type": "module",
